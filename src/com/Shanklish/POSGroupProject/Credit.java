@@ -18,6 +18,7 @@ import java.util.Scanner;
 	        expiration = "";
 	        verificationValue = "";
 	    }
+	    
 	    public void creditPay() 
 	    {
 	        finalTotals();

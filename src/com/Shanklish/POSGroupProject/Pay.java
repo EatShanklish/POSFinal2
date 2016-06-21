@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -32,9 +34,12 @@ public abstract class Pay
 	     	
 		double tax = Pay.calcTax(sub);
 		
+		BigDecimal taxes = new BigDecimal(tax);
+		taxes = taxes.setScale(2, RoundingMode.HALF_UP);
+		
 		System.out.println(sub + " is your subtotal");
 		
-		System.out.println(tax + " is your tax");
+		System.out.println(taxes + " is your tax");
 		
 		System.out.println("Your grand total is: " + Pay.grandTotal(tax, sub));
 	    }
@@ -67,6 +72,7 @@ public abstract class Pay
 	static public double calcTax(double subTotal)
 	{
 		tax = subTotal * 0.06;
+		
 		return tax;
 	}
 	
@@ -115,6 +121,8 @@ public abstract class Pay
 		{
 		    bufferedWriter.append((p.get(i).getName() + "\t" + p.get(i).getPrice()));
 		    bufferedWriter.append("\n");
+		   bufferedWriter.append("" + Pay.calcSubTotal(purchaseList) + " is your total");//???
+		   
 		}
 	    
 	    bufferedWriter.close();

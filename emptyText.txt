@@ -1,1 +1,6 @@
 Apple	30
+<<<<<<< HEAD
+=======
+140.0 is your totalTurkey	110
+280.0 is your total
+>>>>>>> e10bef2495f5a99702974a69d9d0b7439d6c05a6
