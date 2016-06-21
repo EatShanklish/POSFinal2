@@ -8,13 +8,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public abstract class Pay {
 	protected static double subTotal;
 	protected static double tax;
 	protected static double grandTotal;
 	
-	
+	public ArrayList<Product> purchaseList = new ArrayList<Product>();
 
 
 	
@@ -77,5 +78,21 @@ public abstract class Pay {
 	    bufferedWriter.close();
 	    fileWriter.close();
 	}
+	
+	public static void decidePaymentType(Scanner scan , String prompt){
+		System.out.println(prompt);
+		String paymentTypeChoice = scan.nextLine();
+		
+		switch (paymentTypeChoice.trim().toLowerCase().substring(0, 2)){
+		case "cr": Credit.creditPay();
+			break;
+		case "ch": Check.checkPay();
+			break;
+		case "ca": Cash.grandTotal(6, 6);
+		}
+		
+	}
+	
+	
 }
 
