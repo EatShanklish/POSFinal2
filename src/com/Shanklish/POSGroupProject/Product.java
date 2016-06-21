@@ -21,7 +21,6 @@ public class Product
 	
 	
 	
-	
 	//-----GETTERS AND SETTERS---------
 	
 	public String getName()
