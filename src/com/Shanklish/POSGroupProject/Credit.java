@@ -18,9 +18,10 @@ import java.util.Scanner;
 	        expiration = "";
 	        verificationValue = "";
 	    }
+	    
 	    public void creditPay() 
 	    {
-	        Pay.finalTotals();
+	        finalTotals();
 	        
 	        System.out.println("Enter your card number: ");
 	        input = scan.nextLine();
