@@ -1,4 +1,2 @@
-Apple	3
-Coke	9
-Pepsi	7
-Hot Dogs	6
+Apple	60
+Turkey	220
