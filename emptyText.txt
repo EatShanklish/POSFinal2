@@ -1,3 +1,12 @@
-Apple	30
-140.0 is your totalTurkey	110
-280.0 is your total
+Grand Circus General Store 
+-------------------------
+Product	 	Price
+
+GroundBeef	 	100
+
+MountainDew	 	46
+===================================
+
+146.0 is your total
+8.76 is your sales tax
+154.76 is your Grand Total

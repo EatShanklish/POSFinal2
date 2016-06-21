@@ -28,7 +28,7 @@ public abstract class Pay
   
 	 }
 	 
-	 public static void finalTotals()
+	 public static void finalTotals()			//Prints all calculations to screen
 	 {
 	     	double sub = Pay.calcSubTotal(purchaseList);
 	     	
@@ -45,22 +45,23 @@ public abstract class Pay
 	    }
 	    
 	    
-	    static public double getTax()
+	    static public double getTax()			//returns Tax
 	    {    
 	        return tax;
 	    }
-	    static public double getGrandTotal()
+	    static public double getGrandTotal()		//returns Grand Total
 	    {    
 	        return grandTotal;
 	        
 	    }
-	    static public double getSubTotal()
+	    static public double getSubTotal()			//returns Sub Total
 	    {
 	        
 	        return subTotal;
 	    }
+	    
 	
-	 public static double calcSubTotal(ArrayList<Product> list)
+	 public static double calcSubTotal(ArrayList<Product> list)	//Calculates Sub Total
 	 {
 		for( int i = 0; i < list.size(); i++) 
 			 subTotal += list.get(i).getPrice();
@@ -69,14 +70,14 @@ public abstract class Pay
 	}
 
 	
-	static public double calcTax(double subTotal)
+	static public double calcTax(double subTotal)			//Calculates tax
 	{
 		tax = subTotal * 0.06;
 		
 		return tax;
 	}
 	
-	static public double grandTotal(double tax, double subTotal)
+	static public double grandTotal(double tax, double subTotal)	//Calculates Grand Total
 	{	
 		grandTotal = tax + subTotal;
 		return grandTotal;
@@ -85,8 +86,8 @@ public abstract class Pay
 	
 	
 	
-	//Will print all the items into the console
-	public static void viewProducts() throws IOException
+	
+	public static void viewProducts() throws IOException		//Will print all the items into the console as a menu
 	{
 	    String fileName = "Groceries.txt";
 	    String line = null;
@@ -105,32 +106,45 @@ public abstract class Pay
 	}
 
 	
-	//Take product object as parameter and add it to the text file
-	//( pay.writeReciept(arraylist.get[i]) )
 	
-	public static void writeReciept(ArrayList<Product> p) throws IOException
+	
+	
+	public static void writeReciept(ArrayList<Product> p) throws IOException	//Writes itemsPurchased, all calculations etc to a text file.
 	{
 	    Files.delete(Paths.get("emptyText.txt"));
 	    File file = new File("emptyText.txt");
 	    file.createNewFile();
 	   
 	    FileWriter fileWriter = new FileWriter(file, true);
-	    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);  	       
+	    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); 
+	    
+	    bufferedWriter.append("Grand Circus General Store " + "\n");
+	    bufferedWriter.append("-------------------------" + "\n");
+	    bufferedWriter.append("Product" + "\t \t" + "Price" + "\n");
 	    
 	    for(int i = 0; i < p.size(); i++)
 		{
-		    bufferedWriter.append((p.get(i).getName() + "\t" + p.get(i).getPrice()));
 		    bufferedWriter.append("\n");
-		   bufferedWriter.append("" + Pay.calcSubTotal(purchaseList) + " is your total");//???
-		   
+		    bufferedWriter.append((p.get(i).getName() + "\t \t" + p.get(i).getPrice()));
+		    bufferedWriter.append("\n");	    
 		}
+	    
+	    bufferedWriter.append("===================================" + "\n");
+	    bufferedWriter.append("\n");
+	    bufferedWriter.append("" + Pay.calcSubTotal(purchaseList) + " is your total");
+	    bufferedWriter.append("\n");
+	    bufferedWriter.append("" + Pay.calcTax(subTotal) + " is your sales tax");
+	    bufferedWriter.append("\n");
+	    bufferedWriter.append("" + Pay.grandTotal(tax, subTotal) + " is your Grand Total");
+	    bufferedWriter.append("\n");
+	   
 	    
 	    bufferedWriter.close();
 	    fileWriter.close();
 	}
 	
-	// Presents the shop's inventory
-	public static void welcomeMenu() throws IOException
+	
+	public static void welcomeMenu() throws IOException		// Presents the shop's inventory and processes purchases
 	{
 	    String purchase=null;
 	    Scanner scan = new Scanner(System.in);
@@ -140,12 +154,12 @@ public abstract class Pay
 	    
 	    do {
         	    System.out.println("Type the name of the item you would like to purchase");	
-        	     purchase = scan.nextLine();
+        	     purchase = scan.nextLine().toLowerCase();
         	    
         	    
-        		switch ( purchase )				//TODO - ask how many of certain items
+        		switch ( purchase )				
         		    {
-        			case "Apples":
+        			case "apples":
         			    Product apple = new Product("Apple", "Fruit", "Bag of Apples", 3);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -156,7 +170,7 @@ public abstract class Pay
         			    purchaseList.add(apple);
         			    break;
         			    
-        			case "Oranges":
+        			case "oranges":
         			    Product orange = new Product("Orange", "Fruit", "Bag of Oranges", 5);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -167,7 +181,7 @@ public abstract class Pay
         			    purchaseList.add(orange);
         			    break;
         			    
-        			case "Kiwi":
+        			case "kiwi":
         			    Product kiwi = new Product("Kiwi", "Fruit", "Box of Kiwi", 6);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -178,8 +192,8 @@ public abstract class Pay
         			    purchaseList.add(kiwi);
         			    break;
         			    
-        			case "Bananas":
-        			    Product banana = new Product("Banan", "Fruit", "Bunch of Bananas", 5);
+        			case "bananas":
+        			    Product banana = new Product("Banana", "Fruit", "Bunch of Bananas", 5);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
         			    amount = scan.nextInt();  	
@@ -189,10 +203,10 @@ public abstract class Pay
         			    purchaseList.add(banana);
         			    break;
         			    
-        			case "Ground Beef":
-        			    Product beef = new Product("Ground Beef", "Meat", "Pound of Ground Beef", 10);
+        			case "ground beef":
+        			    Product beef = new Product("GroundBeef", "Meat", "Pound of Ground Beef", 10);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many pounds of " + purchase + " would you like?");
         			    amount = scan.nextInt();
         			    scan.nextLine();
         			    beef.setPrice(amount * beef.getPrice());
@@ -200,10 +214,10 @@ public abstract class Pay
         			    purchaseList.add(beef);
         			    break;
         			    
-        			case "Turkey":
+        			case "turkey":
         			    Product turkey = new Product("Turkey", "Poultry", "Pound of Turkey", 11);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many pounds of " + purchase + " would you like?");
         			    amount = scan.nextInt();  
         			    scan.nextLine();
         			    turkey.setPrice(amount * turkey.getPrice());
@@ -211,10 +225,10 @@ public abstract class Pay
         			    purchaseList.add(turkey);
         			    break;
         			    
-        			case "HotDogs":
+        			case "hotdogs":
         			    Product hotdogs = new Product("Hot Dogs", "Meat", "Pack of Hot Dogs", 6);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many packs of " + purchase + " would you like?");
         			    amount = scan.nextInt();  
         			    scan.nextLine();
         			    hotdogs.setPrice(amount * hotdogs.getPrice());
@@ -222,10 +236,10 @@ public abstract class Pay
         			    purchaseList.add(hotdogs);
         			    break;
         			    
-        			case "Chicken":
+        			case "chicken":
         			    Product chicken = new Product("Chicken", "Poultry", "Pound of Chicken", 13);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many pounds of " + purchase + " would you like?");
         			    amount = scan.nextInt();  
         			    scan.nextLine();
         			    chicken.setPrice(amount * chicken.getPrice());
@@ -233,10 +247,10 @@ public abstract class Pay
         			    purchaseList.add(chicken);
         			    break;
         			    
-        			case "Pepsi":
+        			case "pepsi":
         			    Product pepsi = new Product("Pepsi", "Beverage", "Can of Pepsi", 7);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many cans of " + purchase + " would you like?");
         			    amount = scan.nextInt(); 
         			    scan.nextLine();
         			    pepsi.setPrice(amount * pepsi.getPrice());
@@ -244,10 +258,10 @@ public abstract class Pay
         			    purchaseList.add(pepsi);
         			    break;
         			    
-        			case "Coke":
+        			case "coke":
         			    Product coke = new Product("Coke", "Beverage", "Can of Coke", 9);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many cans of " + purchase + " would you like?");
         			    amount = scan.nextInt(); 
         			    scan.nextLine();
         			    coke.setPrice(amount * coke.getPrice());
@@ -255,10 +269,10 @@ public abstract class Pay
         			    purchaseList.add(coke);
         			    break;
         			    
-        			case "Sprite":
+        			case "sprite":
         			    Product sprite = new Product("Sprite", "Beverage", "Can of Sprite", 2);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many cans of " + purchase + " would you like?");
         			    amount = scan.nextInt();  
         			    scan.nextLine();
         			    sprite.setPrice(amount * sprite.getPrice());
@@ -266,10 +280,10 @@ public abstract class Pay
         			    purchaseList.add(sprite);
         			    break;
         			    
-        			case "Mountain Dew":
-        			    Product dew = new Product("Mountain Dew", "Beverage", "Can of Dew", 2);
+        			case "mountain dew":
+        			    Product dew = new Product("MountainDew", "Beverage", "Can of Dew", 2);
         			    
-        			    System.out.println("How many " + purchase + " would you like?");
+        			    System.out.println("How many cans of " + purchase + " would you like?");
         			    amount = scan.nextInt();  	
         			    scan.nextLine();
         			    dew.setPrice(amount * dew.getPrice());
@@ -282,18 +296,17 @@ public abstract class Pay
         		    }
         			
         			
-        			
-        		System.out.println("Would you like to make another purchase(Y/N)");
-        		 choice = scan.nextLine();
+        		System.out.println("Would you like to make another purchase(Y/N)");		//Controls the loop
+        		choice = scan.nextLine();
         		
         	} while(choice.equalsIgnoreCase("y"));
 		
-	Pay.writeReciept(purchaseList); 
+	Pay.writeReciept(purchaseList); 						//Calls the method to write to external text file
 	
 		
 	}
 	
-	public static void pickPaymentType(Scanner scan)
+	public static void pickPaymentType(Scanner scan)				//Allows user to pick payment type and launches appropriate methods.
 	{
 	System.out.println("How you would like to pay? (Credit, Check or Cash)");
 	String choice = scan.nextLine();

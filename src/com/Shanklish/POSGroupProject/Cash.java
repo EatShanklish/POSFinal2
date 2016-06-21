@@ -16,32 +16,34 @@ public class Cash extends Pay
     }
     public void cashPay() 
     {
-        
         finalTotals();
         
-        System.out.println("Enter your cash value: ");
-        double input = scan.nextDouble();
-        setCashReceived(input);
-        
-        if (getCashReceived() < grandTotal) 
-        {
-            change = grandTotal - getCashReceived();
-            roundOff = Math.round(change * 100.0) / 100.0;
-            System.out.println("I need more money. Give me this much more: " + roundOff);
-        } 
-        
-        else if (getCashReceived() >= grandTotal) 
-        {
-            change = getCashReceived() - grandTotal;
-            roundOff = Math.round(change * 100.0) / 100.0;
-            
-            System.out.println("Your change is: " + roundOff);
-        }
-        
-          else if (getCashReceived() == grandTotal) 
-        {
-            System.out.println("Your balance is paid in full");
-        }
+       do 
+	{ 
+                System.out.println("Enter your cash value: ");
+                double input = scan.nextDouble();
+                setCashReceived(input);
+                
+                if (getCashReceived() < grandTotal) 
+                {
+                    change = grandTotal - getCashReceived();
+                    roundOff = Math.round(change * 100.0) / 100.0;
+                    System.out.println("Not enough money, Try again");
+                } 
+                
+                else if (getCashReceived() >= grandTotal) 
+                {
+                    change = getCashReceived() - grandTotal;
+                    roundOff = Math.round(change * 100.0) / 100.0;
+                    
+                    System.out.println("Your change is: " + roundOff);
+                }
+                
+                  else if (getCashReceived() == grandTotal) 
+                {
+                    System.out.println("Your balance is paid in full");
+                }
+       }while(getCashReceived() < grandTotal);
     }
     public double getCashReceived() 
     {
