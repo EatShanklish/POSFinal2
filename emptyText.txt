@@ -1,2 +1,1 @@
-Apple	60
-Turkey	220
+Apple	30

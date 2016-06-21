@@ -20,7 +20,7 @@ import java.util.Scanner;
 	    }
 	    public void creditPay() 
 	    {
-	        Pay.finalTotals();
+	        finalTotals();
 	        
 	        System.out.println("Enter your card number: ");
 	        input = scan.nextLine();

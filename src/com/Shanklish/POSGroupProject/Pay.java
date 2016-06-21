@@ -132,12 +132,12 @@ public abstract class Pay
 	    
 	    do {
         	    System.out.println("Type the name of the item you would like to purchase");	
-        	     purchase = scan.nextLine();
+        	     purchase = scan.nextLine().toLowerCase();
         	    
         	    
         		switch ( purchase )				//TODO - ask how many of certain items
         		    {
-        			case "Apples":
+        			case "apples":
         			    Product apple = new Product("Apple", "Fruit", "Bag of Apples", 3);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -148,7 +148,7 @@ public abstract class Pay
         			    purchaseList.add(apple);
         			    break;
         			    
-        			case "Oranges":
+        			case "oranges":
         			    Product orange = new Product("Orange", "Fruit", "Bag of Oranges", 5);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -159,7 +159,7 @@ public abstract class Pay
         			    purchaseList.add(orange);
         			    break;
         			    
-        			case "Kiwi":
+        			case "kiwi":
         			    Product kiwi = new Product("Kiwi", "Fruit", "Box of Kiwi", 6);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -170,7 +170,7 @@ public abstract class Pay
         			    purchaseList.add(kiwi);
         			    break;
         			    
-        			case "Bananas":
+        			case "bananas":
         			    Product banana = new Product("Banan", "Fruit", "Bunch of Bananas", 5);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -181,7 +181,7 @@ public abstract class Pay
         			    purchaseList.add(banana);
         			    break;
         			    
-        			case "Ground Beef":
+        			case "ground beef":
         			    Product beef = new Product("Ground Beef", "Meat", "Pound of Ground Beef", 10);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -192,7 +192,7 @@ public abstract class Pay
         			    purchaseList.add(beef);
         			    break;
         			    
-        			case "Turkey":
+        			case "turkey":
         			    Product turkey = new Product("Turkey", "Poultry", "Pound of Turkey", 11);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -203,7 +203,7 @@ public abstract class Pay
         			    purchaseList.add(turkey);
         			    break;
         			    
-        			case "HotDogs":
+        			case "hotdogs":
         			    Product hotdogs = new Product("Hot Dogs", "Meat", "Pack of Hot Dogs", 6);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -214,7 +214,7 @@ public abstract class Pay
         			    purchaseList.add(hotdogs);
         			    break;
         			    
-        			case "Chicken":
+        			case "chicken":
         			    Product chicken = new Product("Chicken", "Poultry", "Pound of Chicken", 13);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -225,7 +225,7 @@ public abstract class Pay
         			    purchaseList.add(chicken);
         			    break;
         			    
-        			case "Pepsi":
+        			case "pepsi":
         			    Product pepsi = new Product("Pepsi", "Beverage", "Can of Pepsi", 7);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -236,7 +236,7 @@ public abstract class Pay
         			    purchaseList.add(pepsi);
         			    break;
         			    
-        			case "Coke":
+        			case "coke":
         			    Product coke = new Product("Coke", "Beverage", "Can of Coke", 9);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -247,7 +247,7 @@ public abstract class Pay
         			    purchaseList.add(coke);
         			    break;
         			    
-        			case "Sprite":
+        			case "sprite":
         			    Product sprite = new Product("Sprite", "Beverage", "Can of Sprite", 2);
         			    
         			    System.out.println("How many " + purchase + " would you like?");
@@ -258,7 +258,7 @@ public abstract class Pay
         			    purchaseList.add(sprite);
         			    break;
         			    
-        			case "Mountain Dew":
+        			case "mountain dew":
         			    Product dew = new Product("Mountain Dew", "Beverage", "Can of Dew", 2);
         			    
         			    System.out.println("How many " + purchase + " would you like?");

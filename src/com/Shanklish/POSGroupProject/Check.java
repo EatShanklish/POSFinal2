@@ -15,9 +15,9 @@ public class Check extends Pay {
     }
     
     
-    public  void checkPay(){
+    public void checkPay(){
         
-        Pay.finalTotals();
+        finalTotals();
         System.out.println("Enter the amount of check: ");
      
         double input = scan.nextDouble();
