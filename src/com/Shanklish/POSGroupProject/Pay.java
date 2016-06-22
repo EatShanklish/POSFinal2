@@ -64,7 +64,7 @@ public class Pay {
 		    {
 			
 			System.out.println(purchaseList.get(i).getName() + "\t  " + "x"+ purchaseList.get(i).getQuantity() + "\t         $" + purchaseList.get(i).getPrice());
-		
+		    }
 			System.out.println("\n");
 		
 			System.out.println("Subtotal: $" + sub );
@@ -73,7 +73,7 @@ public class Pay {
 		
 			System.out.println("Grand Total: $" + Pay.grandTotal(tax, sub) + "\n");
 		
-		    }
+		    
 		    }
 
 	public static double getTax()// returns Tax
@@ -149,8 +149,7 @@ public class Pay {
 
 		for (int i = 0; i < p.size(); i++) {
 			bufferedWriter.append("\n");
-			bufferedWriter
-					.append((p.get(i).getName() + "\t \t" + p.get(i).getQuantity() + "\t\t" + p.get(i).getPrice()));
+			bufferedWriter.append((p.get(i).getName() + "\t \t" + p.get(i).getQuantity() + "\t\t" + p.get(i).getPrice()));
 			bufferedWriter.append("\n");
 		}
 

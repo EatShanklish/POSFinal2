@@ -2,9 +2,11 @@ Grand Circus General Store
 -------------------------
 Product	 	Quantity		Price
 
-Apple	 	10		30
+Coke	 	200		1800
+
+Sprite	 	600		1200
 ===================================
 
-30.0 is your total
-1.7999999999999998 is your sales tax
-31.8 is your Grand Total
+3000.0 is your total
+180.0 is your sales tax
+3180.0 is your Grand Total
