@@ -16,21 +16,19 @@ public class Check extends Pay
         number = 0;
     }
     
-    
     public  void checkPay()
     {   
         Pay.finalTotals();
-        System.out.println("Enter the amount of check: ");
-     
-        double input = scan.nextDouble();
-        setCheckAmount(input);
         
         System.out.println("Enter the check number: ");
-        int input2 = scan.nextInt();
+        
+        int input2 = Validator.getInt(scan);
+        
         scan.nextLine();
+        
         setCheckNumber(input2);
         
-        System.out.println("You're going to send an amount of " + getCheckAmount() + " with check number " + getCheckNumber() + " is this okay? (y/n)");
+        System.out.println("You're going to send an amount of " + getGrandTotal() + " with check number " + getCheckNumber() + " is this okay? (y/n)");
                     
         String input3 = scan.nextLine();
         
@@ -42,7 +40,11 @@ public class Check extends Pay
         {
             System.out.println("Check Cancelled");
         }
-        
+        else{
+        	
+        	System.out.println("Please try again");
+        	
+        }
         
     }
     

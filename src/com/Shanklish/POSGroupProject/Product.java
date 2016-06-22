@@ -1,6 +1,5 @@
 package com.Shanklish.POSGroupProject;
 
-import java.util.ArrayList;
 
 public class Product 
     {
@@ -19,9 +18,7 @@ public class Product
 	    price = p;
 	    quantity = q;
 	}
-	
-	
-	
+
 	
 	//-----GETTERS AND SETTERS---------
 	
@@ -30,18 +27,11 @@ public class Product
 	{
 	    return quantity;
 	}
-
-
-
-
 	
 	public void setQuantity( int quantity )
 	{
 	    this.quantity = quantity;
 	}
-
-
-
 
 	public String getName()
 	{

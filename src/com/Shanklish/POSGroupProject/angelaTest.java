@@ -1,7 +1,6 @@
 package com.Shanklish.POSGroupProject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class angelaTest 
