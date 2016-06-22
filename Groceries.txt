@@ -1,12 +1,15 @@
-Apples 
-Oranges 
-Kiwi 
-Bananas 
-Ground Beef  
-Turkey   
-HotDogs  
-Chicken  
-Pepsi 	 
-Coke   
-Sprite   
-Mountain Dew  
+Item:		Type:		Description:		Price:
+————		————-		———————————		————
+
+Apples		Fruit		Bag of Apples		$3.00
+Oranges		Fruit		Bag of Oranges		$5.00
+Kiwi		Fruit		Box of Kiwi		$6.00 
+Bananas		Fruit		Bag of Bananas		$5.00
+Ground Beef	Meat		Pound of Beef		$10.00
+Turkey 		Poultry		Pound of Turkey		$11.00  
+HotDogs		Meat		Pack of HotDogs		$6.00 
+Chicken 	Poultry		Pound of Chicken	$13.00
+Pepsi		Beverage	Can of Sugar		$7.00	 
+Coke   		Beverage	Can of Sugar		$9.00
+Sprite   	Beverage	Can of Sprite		$2.00
+Mountain Dew  	Beverage	Can of Green Stuff	$2.oo

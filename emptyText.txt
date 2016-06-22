@@ -1,12 +1,12 @@
 Grand Circus General Store 
 -------------------------
-Product	 	Price
+Product	 	Quantity		Price
 
-GroundBeef	 	100
+Apple	 	20		60
 
-MountainDew	 	46
+Chicken	 	10		130
 ===================================
 
-146.0 is your total
-8.76 is your sales tax
-154.76 is your Grand Total
+190.0 is your total
+11.4 is your sales tax
+201.4 is your Grand Total

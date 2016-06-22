@@ -45,6 +45,7 @@ public class Cash extends Pay
                 }
        }while(getCashReceived() < grandTotal);
     }
+    
     public double getCashReceived() 
     {
         return cashReceived;

@@ -36,7 +36,7 @@ import java.util.Scanner;
 	        setExpiration(input3);
 	        
 	        
-	        System.out.println("This card " + getCardNumber() + " has been charged " + grandTotal);
+	        System.out.println("Card number " + getCardNumber() + " has been charged $" + grandTotal);
 	    }
 	    
 	    public void setCardNumber(String cardNumber) 

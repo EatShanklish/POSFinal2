@@ -7,15 +7,17 @@ public class Product
 	private String name;
 	private String category;
 	private String description;
+	private int quantity;
 	private int price;
 	
 	
-	public Product(String n, String c, String d, int p)
+	public Product(String n, String c, String d, int p, int q)
 	{
 	    name = n;
 	    category = c;
 	    description = d;
 	    price = p;
+	    quantity = q;
 	}
 	
 	
@@ -23,6 +25,24 @@ public class Product
 	
 	//-----GETTERS AND SETTERS---------
 	
+	
+	public int getQuantity()
+	{
+	    return quantity;
+	}
+
+
+
+
+	
+	public void setQuantity( int quantity )
+	{
+	    this.quantity = quantity;
+	}
+
+
+
+
 	public String getName()
 	{
 	    return name;
