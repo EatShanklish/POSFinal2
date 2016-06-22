@@ -36,25 +36,37 @@ import java.util.Scanner;
 	        setExpiration(input3);
 	        
 	        
-	        System.out.println("This card " + getCardNumber() + " has been charged " + grandTotal);
+	        System.out.println("Card number " + getCardNumber() + " has been charged $" + grandTotal);
 	    }
-	    public void setCardNumber(String cardNumber) {
+	    
+	    public void setCardNumber(String cardNumber) 
+	    {
 	        this.cardNumber = cardNumber;
 	    }
-	    public void setExpiration(String expiration) {
+	    
+	    public void setExpiration(String expiration)
+	    {
 	        this.expiration = expiration;
 	    }
-	    public void setVerification(String verificationValue) {
+	    
+	    public void setVerification(String verificationValue) 
+	    {
 	        this.verificationValue = verificationValue;
 	    }
-	    public String  getCardNumber() {
+	    
+	    public String  getCardNumber() 
+	    {
 	        cardNumber = "*********" + input.substring(input.length() - 4, input.length());
 	        return cardNumber;
 	    }
-	    public String getExpiration() {
+	    
+	    public String getExpiration() 
+	    {
 	        return expiration;
 	    }
-	    public String getVerification() {
+	    
+	    public String getVerification() 
+	    {
 	        return verificationValue;
 	    }
 	}

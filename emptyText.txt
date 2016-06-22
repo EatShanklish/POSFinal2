@@ -1,6 +1,10 @@
-Apple	30
-<<<<<<< HEAD
-=======
-140.0 is your totalTurkey	110
-280.0 is your total
->>>>>>> e10bef2495f5a99702974a69d9d0b7439d6c05a6
+Grand Circus General Store 
+-------------------------
+Product	 	Quantity		Price
+
+Apple	 	10		30
+===================================
+
+30.0 is your total
+1.7999999999999998 is your sales tax
+31.8 is your Grand Total
