@@ -2,11 +2,13 @@ Grand Circus General Store
 -------------------------
 Product	 	Quantity		Price
 
-Apple	 	20		60
+Kiwi	 	23		138
 
-Chicken	 	10		130
+Coke	 	19		171
+
+Sprite	 	90		180
 ===================================
 
-190.0 is your total
-11.4 is your sales tax
-201.4 is your Grand Total
+489.0 is your total
+29.34 is your sales tax
+518.34 is your Grand Total
