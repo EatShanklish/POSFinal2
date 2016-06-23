@@ -13,7 +13,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Pay {
+public class Pay 
+{
 	protected static double subTotal;
 	protected static double tax;
 	protected static double grandTotal;
@@ -48,23 +49,22 @@ public class Pay {
 
 	public static void finalTotals()			//Prints all calculations to screen
 	 {
-	    double sub = Pay.calcSubTotal(purchaseList);
-	    double tax = Pay.calcTax(sub);
+	     	double sub = Pay.calcSubTotal(purchaseList);
+	     	double tax = Pay.calcTax(sub);
 		
 		BigDecimal taxes = new BigDecimal(tax);
 		taxes = taxes.setScale(2, RoundingMode.HALF_UP);
 		
 		System.out.println("\n");
-		System.out.println("Reciept: ");
+		System.out.println("Receipt: ");
 		System.out.println("\n");
 		System.out.println("Item" + "\t" + "Quantity" + "\t" + "Price");
 		System.out.println("----" + "\t" + "--------" + "\t" + "-----");
 		
 		for(int i = 0; i < purchaseList.size(); i++)
-		    {
-			
 			System.out.println(purchaseList.get(i).getName() + "\t  " + "x"+ purchaseList.get(i).getQuantity() + "\t         $" + purchaseList.get(i).getPrice());
-		    }
+		   
+		
 			System.out.println("\n");
 		
 			System.out.println("Subtotal: $" + sub );
@@ -76,17 +76,17 @@ public class Pay {
 		    
 		    }
 
-	public static double getTax()// returns Tax
+	public static double getTax()				// returns Tax
 	{
 		return tax;
 	}
 
-	public static double getGrandTotal()// returns Grand Total
+	public static double getGrandTotal()			// returns Grand Total
 	{
 		return grandTotal;
 	}
 
-	public static double getSubTotal() // returns Sub Total
+	public static double getSubTotal() 			// returns Sub Total
 	{
 		return subTotal;
 	}
@@ -100,7 +100,7 @@ public class Pay {
 		return subTotal;
 	}
 
-	static public double calcTax(double subTotal) // Calculates tax
+	static public double calcTax(double subTotal) 		// Calculates tax
 	{
 		tax = subTotal * 0.06;
 
@@ -115,9 +115,7 @@ public class Pay {
 		return grandTotal;
 	}
 
-	public static void viewProducts() throws IOException // Will print all the
-															// items into the
-															// console as a menu
+	public static void viewProducts() throws IOException // Will print all the items																													// console as a menu
 	{
 		String fileName = "Groceries.txt";
 		String line = null;
@@ -125,15 +123,15 @@ public class Pay {
 		FileReader fileReader = new FileReader(fileName);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-		while ((line = bufferedReader.readLine()) != null) {
+		while ((line = bufferedReader.readLine()) != null) 
 			System.out.println(line);
-		}
+		
 
 		bufferedReader.close();
 		fileReader.close();
 	}
 
-	public static void writeReciept(ArrayList<Product> p) throws IOException // Writes itemsPurchase all calculations etc to a text file
+	public static void writeReciept(ArrayList<Product> p) throws IOException // Writes itemsPurchased ,all calculations etc to a text file
 	
 	{
 		Files.delete(Paths.get("emptyText.txt"));
@@ -142,12 +140,14 @@ public class Pay {
 
 		FileWriter fileWriter = new FileWriter(file, true);
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
+		
+		
 		bufferedWriter.append("Grand Circus General Store " + "\n");
 		bufferedWriter.append("-------------------------" + "\n");
-		bufferedWriter.append("Product" + "\t \t" + "Quantity" + "\t\t" + "Price" + "\n");
+		bufferedWriter.append("Product" + "\t \t" + "Quantity" + "\t" + "Price" + "\n");
 
-		for (int i = 0; i < p.size(); i++) {
+		for (int i = 0; i < p.size(); i++) 
+		{
 		    	bufferedWriter.newLine();
 			bufferedWriter.append((p.get(i).getName() + "\t \t" + p.get(i).getQuantity() + "\t\t" + p.get(i).getPrice()));
 			bufferedWriter.newLine();
@@ -178,8 +178,9 @@ public class Pay {
 
 			purchase = Validator.getString2(scan, Pay.getProductList());
 
-			switch (purchase) {
-			case "apples":
+			switch (purchase) 
+			{
+			  case "apples":
 
 				Product apple = new Product("Apple", "Fruit", "Bag of Apples", 3, 1);
 
@@ -376,25 +377,23 @@ public class Pay {
 				purchaseList.add(dew);
 				break;
 
-			default:
+				default:
 				break;
 			}
 
-		System.out.println("Anything else?(Y/N)"); // Controls the loop
-		
-		choice = scan.nextLine();
+        		System.out.println("Anything else?(Y/N)"); // Controls the loop
+        		
+        		choice = scan.nextLine();
 
 		} while (choice.equalsIgnoreCase("y"));
 
 		Pay.writeReciept(purchaseList); // Calls the method to write to external
-										// text file
+										
 
 	}
 
-	public static void pickPaymentType(Scanner scan) // Allows user to pick
-														// payment type and
-														// launches appropriate
-														// methods.
+	public static void pickPaymentType(Scanner scan) 
+														
 	{
 		System.out.println("How you would like to pay? (Credit, Check or Cash)");
 		String choice = scan.nextLine();

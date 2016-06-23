@@ -17,8 +17,7 @@ public class angelaTest
 	    Pay.viewProducts();
 	    Pay.welcomeMenu();
 	    Pay.pickPaymentType(scan);
-	    
-		
+	    	
 		
 	}
 

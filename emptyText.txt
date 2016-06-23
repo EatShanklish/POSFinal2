@@ -1,12 +1,14 @@
 Grand Circus General Store 
 -------------------------
-Product	 	Quantity		Price
+Product	 	Quantity	Price
 
-Lemonade	 	1		6
+Apple	 	23		69
 
-Chicken	 	10		130
+Pepsi	 	30		210
+
+Coke	 	12		108
 ===================================
 
-136.0 is your total
-8.16 is your sales tax
-144.16 is your Grand Total
+387.0 is your total
+23.22 is your sales tax
+410.22 is your Grand Total
